@@ -61,13 +61,13 @@ while True:
                                     print("Muy bien, acontinuación se presentara la lista con los partidos que van más alto hasta el más bajo")
                                     partidos.sort(reverse=True)
                                     print(partidos)
-                                    nombre_archivo = "acta__de_notas_" + ".csv"#Este apartado crea el documento csv mediante la librería que importamos llamada csv
+                                    nombre_archivo = "acta__de_notas_" + ".csv"
                                     with open(nombre_archivo, "w", newline="") as archivo:
                                         escritor_csv = csv.writer(archivo)
-                                        escritor_csv.writerow(["Carnet", "Nombre", "Carrera", "Nota"])#Aquí crea los respectivos apartados en el documento csv donde marca el carnet, nombre, carrera y nota de cada estudiante
+                                        escritor_csv.writerow(["Carnet", "Nombre", "Carrera", "Nota"])
                                         total_notas = 0
                                         for partido in partidos:
-                                            ([partido["Código"], partido["Nombre"], partido["Sigla"], partido["Departamento"], partido["Municipio"], partido["Número de mesa"], partido["Votos validos"]])#Aquí lo que hace es que empieza a generar el promediado de todos los partidos leyendo mediante un len la cantidad de los partidos y sumando las notas de todos ellos y luego dividiendola en el len anterior
+                                            ([partido["Código"], partido["Nombre"], partido["Sigla"], partido["Departamento"], partido["Municipio"], partido["Número de mesa"], partido["Votos validos"]])
                                             total_notas += partido["Votos validos"]
                                         promedio_notas = total_notas / len(partidos)
                                         escritor_csv.writerow([])
